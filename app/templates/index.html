@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+ {% block content %}
+
+ {% if current_user.is_authenticated %}
+    <h1 class="text-center"></h1>
+ {% else %}
+    <h3 class="text-center mt-4">Forum for Dealer Reviews</h3>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide mt-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="100000">
+                <img src="{{ url_for('static', filename='images/home1.jpeg') }}" class="d-block h-50 w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                <h3>Save Time and Energy!</h3>
+                <strong><p>Know which dealership to purchase your next vehicle from.</p></strong>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="{{ url_for('static', filename='images/home2.jpeg') }}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                <h4>Join the Community!</h4>
+                <strong><p class="mt-4">Read about the experiences shoppers have had at nearby dealerships.</p></strong>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/home3.jpeg') }}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                <h4>Save Money!</h4>
+                <strong><p>Know what dealerships in your area are marking up their inventory.</p></strong>
+                </div>
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    {% endif %}
+
+{% endblock content %}

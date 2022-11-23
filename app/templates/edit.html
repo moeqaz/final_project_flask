@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Review{% endblock %}
+
+ {% block content %}
+ 
+ <form class="my-3 p-5" action="" method="POST">
+     <h1 class="text-center">Edit Your Review of {{ review.dealership_name }}</h1>
+     
+     {{ form.csrf_token }}
+     
+     {{ form.dealership_name.label }}
+     {{ form.dealership_name(class='form-control my-2', value=review.dealership_name) }}
+     
+     {{ form.dealership_address.label }}
+     {{ form.dealership_address(class='form-control my-2', value=review.dealership_address) }}
+     
+     {{ form.rating.label }}
+     {{ form.rating(class='form-control my-2', value=review.rating) }}
+     
+     {{ form.msrp.label }}
+     {{ form.msrp(class='form-control my-2', value=review.msrp) }}
+     
+     {{ form.markup.label }}
+     {{ form.markup(class='form-control my-2', value=review.markup) }}
+     
+     {{ form.sold.label }}
+     {{ form.sold(class='form-control my-2', value=review.sold) }}
+     
+     {{ form.comment.label }}
+     {{ form.comment(class='form-control my-2', value=review.comment) }}
+     
+     {{ form.submit(class='btn btn-danger w-100 mt-3') }}
+     
+     
+    </form>
+    
+{% endblock content %}

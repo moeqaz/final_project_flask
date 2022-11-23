@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ review.dealership_name }}{% endblock %}
+
+ {% block content %}
+
+
+<div class="card w-100 text-center text-light bg-secondary mt-5">
+    <div class="card-body">
+        <h6>Location</h6>
+      <h3 class="card-title">{{ review.dealership_name }}</h3>
+      <h4 class="card-title">{{ review.dealership_address }}</h4>
+      <h5 class="card-text"><image src="{{ url_for('static', filename='images/star.svg') }}"></image> {{ review.rating }} of 5</h5>
+    </div>
+  </div>
+
+
+  <div class="card w-100 text-center text-light bg-secondary mt-3">
+    <div class="card-body">
+        <h6>Transaction</h6>
+      <h5 class="card-title">MSRP: ${{ review.msrp }}</h5>
+      <h5 class="card-title">Markup: ${{ review.markup }}</h5>
+      <h5 class="card-title">Total: ${{ review.sold }}</h5>
+    </div>
+  </div>
+
+
+  <div class="card w-100 text-center text-light bg-secondary mt-3">
+    <div class="card-body">
+        <h6>Comment</h6>
+      <h5 class="card-body">{{ review.comment }}</h5>
+    </div>
+  </div>
+
+
+{% endblock content %}
