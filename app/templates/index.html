@@ -5,7 +5,10 @@
  {% block content %}
 
  {% if current_user.is_authenticated %}
-    <h1 class="text-center"></h1>
+    <h1 class="text-center my-3">Welcome Back!</h1>
+
+    <image src="{{ url_for('static', filename='images/home4.jpeg') }}" class="w-100 h-50"></image>
+
  {% else %}
     <h3 class="text-center mt-4">Forum for Dealer Reviews</h3>
         <div id="carouselExampleDark" class="carousel carousel-dark slide mt-5" data-bs-ride="carousel">
